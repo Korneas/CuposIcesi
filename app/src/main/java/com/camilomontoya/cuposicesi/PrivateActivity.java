@@ -3,8 +3,11 @@ package com.camilomontoya.cuposicesi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class PrivateActivity extends AppCompatActivity {
@@ -16,6 +19,9 @@ public class PrivateActivity extends AppCompatActivity {
     Button test;
 
     String nameOrg,ageOrg,modelOrg,idcarOrg;
+
+    ProgressBar progressBar;
+    Switch sName,sAge,sModel,sIdcar,sCar,sProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,15 @@ public class PrivateActivity extends AppCompatActivity {
         modelPriv = (TextView) findViewById(R.id.modeloPriv);
         idcarPriv = (TextView) findViewById(R.id.placaPriv);
 
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        sName = (Switch) findViewById(R.id.switchName);
+        sAge = (Switch) findViewById(R.id.switchAge);
+        sModel = (Switch) findViewById(R.id.switchModel);
+        sIdcar = (Switch) findViewById(R.id.switchIdcar);
+        sCar = (Switch) findViewById(R.id.switchCar);
+        sProfile = (Switch) findViewById(R.id.switchProfile);
+
         namePriv.setElevation(6);
         agePriv.setElevation(6);
         modelPriv.setElevation(6);
@@ -66,5 +81,16 @@ public class PrivateActivity extends AppCompatActivity {
         agePriv.setText(ageOrg);
         modelPriv.setText(modelOrg);
         idcarPriv.setText(idcarOrg);
+
+        sName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(sName.isChecked()){
+                    progressBar.setProgress(progressBar.getProgress()+20);
+                } else {
+                    progressBar.setProgress(progressBar.getProgress()-20);
+                }
+            }
+        });
     }
 }
