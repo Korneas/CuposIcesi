@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -70,7 +69,7 @@ public class PrivateActivity extends AppCompatActivity {
         modelPriv.setElevation(6);
         idcarPriv.setElevation(6);
 
-        test = (Button) findViewById(R.id.testPriv);
+        test = (Button) findViewById(R.id.testing);
 
         namePriv.setTypeface(ControlTipografia.getInstance().getTypeMsg());
         agePriv.setTypeface(ControlTipografia.getInstance().getTypeMsg());
@@ -86,6 +85,61 @@ public class PrivateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(sName.isChecked()){
+                    progressBar.setProgress(progressBar.getProgress()+20);
+                } else {
+                    progressBar.setProgress(progressBar.getProgress()-20);
+                }
+            }
+        });
+
+        sAge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(sAge.isChecked()){
+                    progressBar.setProgress(progressBar.getProgress()+20);
+                } else {
+                    progressBar.setProgress(progressBar.getProgress()-20);
+                }
+            }
+        });
+
+        sModel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(sModel.isChecked()){
+                    progressBar.setProgress(progressBar.getProgress()+20);
+                } else {
+                    progressBar.setProgress(progressBar.getProgress()-20);
+                }
+            }
+        });
+
+        sIdcar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(sIdcar.isChecked()){
+                    progressBar.setProgress(progressBar.getProgress()+20);
+                } else {
+                    progressBar.setProgress(progressBar.getProgress()-20);
+                }
+            }
+        });
+
+        sProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(sProfile.isChecked()){
+                    progressBar.setProgress(progressBar.getProgress()+20);
+                } else {
+                    progressBar.setProgress(progressBar.getProgress()-20);
+                }
+            }
+        });
+
+        sCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(sCar.isChecked()){
                     progressBar.setProgress(progressBar.getProgress()+20);
                 } else {
                     progressBar.setProgress(progressBar.getProgress()-20);
