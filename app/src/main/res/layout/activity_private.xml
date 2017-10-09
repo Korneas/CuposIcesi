@@ -24,15 +24,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:text="Privacidad de datos"
+            android:text="Nivel de confianza"
             android:textAlignment="viewStart" />
 
     </android.support.v7.widget.Toolbar>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:indeterminateTint="@color/colorAccent"
+        android:max="1000"
+        android:progress="0"
+        android:progressTint="@color/colorPrimary"
+        android:scaleY="3"
+        tools:targetApi="24"
+        android:layout_alignBottom="@+id/toolbarPriv"
+        android:layout_marginBottom="-31dp"
+        android:layout_alignParentStart="true" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp">
+        android:layout_marginTop="80dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -40,20 +55,6 @@
             android:background="@color/colorToolbar"
             tools:context="com.camilomontoya.cuposicesi.RegisterActivity">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="32dp"
-                android:text="Tu nivel de confiabilidad:"
-                android:textAlignment="center"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </TextView>
 
             <ImageButton
                 android:id="@+id/fotoPerfilPriv"
@@ -63,14 +64,14 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:background="#000000"
                 android:scaleType="centerCrop"
+                app:layout_constraintHorizontal_bias="0.353"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:srcCompat="@drawable/profile_woman"
-                app:layout_constraintHorizontal_bias="0.353"
-                app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/profile_woman" />
 
             <TextView
                 android:id="@+id/nombrePriv"
@@ -84,6 +85,7 @@
                 android:background="@drawable/rounded_border"
                 android:ems="10"
                 android:padding="10dp"
+                android:text="Nombre"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
                 app:layout_constraintHorizontal_bias="0.2"
@@ -103,12 +105,67 @@
                 android:background="@drawable/rounded_border"
                 android:ems="10"
                 android:padding="10dp"
+                android:text="Tiempo conduciendo"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
                 app:layout_constraintHorizontal_bias="0.2"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edadPriv" />
+
+            <TextView
+                android:id="@+id/rolPriv"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:padding="10dp"
+                android:text="Rol personal"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/modeloPriv" />
+
+            <TextView
+                android:id="@+id/carDesPriv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="24dp"
+                android:text="Datos del vehiculo"
+                android:textSize="18sp"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rolPriv" />
+
+            <TextView
+                android:id="@+id/colorCarPriv"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:padding="10dp"
+                android:text="Color del auto"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/carDesPriv" />
 
             <TextView
                 android:id="@+id/placaPriv"
@@ -122,12 +179,155 @@
                 android:background="@drawable/rounded_border"
                 android:ems="10"
                 android:padding="10dp"
+                android:text="Placa del auto"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
                 app:layout_constraintHorizontal_bias="0.2"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/modeloPriv" />
+                app:layout_constraintTop_toBottomOf="@+id/colorCarPriv" />
+
+            <TextView
+                android:id="@+id/capacityPriv"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:padding="10dp"
+                android:text="Capacidad de personas"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placaPriv" />
+
+            <ImageView
+                android:id="@+id/fotoAutoPriv"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:background="#000000"
+                android:scaleType="centerCrop"
+                android:textSize="18dp"
+                app:layout_constraintHorizontal_bias="0.35"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/capacityPriv"
+                app:srcCompat="@drawable/carro" />
+
+            <ImageView
+                android:id="@+id/fotoSegPriv"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:background="#000000"
+                android:scaleType="centerCrop"
+                android:textSize="18dp"
+                app:layout_constraintHorizontal_bias="0.35"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fotoAutoPriv"
+                app:srcCompat="@drawable/carro" />
+
+            <TextView
+                android:id="@+id/cuposDesPriv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="24dp"
+                android:text="Descripcion del cupo"
+                android:textSize="18sp"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fotoSegPriv" />
+
+            <TextView
+                android:id="@+id/startPointPriv"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:padding="10dp"
+                android:text="Punto de partida"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cuposDesPriv" />
+
+            <TextView
+                android:id="@+id/availableCuposPriv"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:padding="10dp"
+                android:text="Cupos disponibles"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startPointPriv" />
+
+            <TextView
+                android:id="@+id/timeStartPriv"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:padding="10dp"
+                android:text="Hora de salida"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/availableCuposPriv" />
+
+            <TextView
+                android:id="@+id/timeEndPriv"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:padding="10dp"
+                android:text="Hora de llegada"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timeStartPriv" />
 
             <TextView
                 android:id="@+id/edadPriv"
@@ -141,6 +341,7 @@
                 android:background="@drawable/rounded_border"
                 android:ems="10"
                 android:padding="10dp"
+                android:text="Edad"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
                 app:layout_constraintHorizontal_bias="0.2"
@@ -148,58 +349,30 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nombrePriv" />
 
-            <ImageView
-                android:id="@+id/fotoAutoPriv"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="32dp"
-                android:background="#000000"
-                android:scaleType="centerCrop"
-                android:textSize="18dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/placaPriv"
-                app:srcCompat="@drawable/carro"
-                app:layout_constraintHorizontal_bias="0.35"/>
-
             <Button
+                android:id="@+id/testing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:backgroundTint="@color/colorPrimary"
-                android:padding="15dp"
-                android:text="Hacer prueba"
+                android:paddingBottom="15dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="15dp"
+                android:text="Confirmar"
                 android:textColor="#fff"
-                android:id="@+id/testing"
+                app:layout_constraintHorizontal_bias="0.504"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fotoAutoPriv" />
+                app:layout_constraintTop_toBottomOf="@+id/failsPriv" />
 
             <Space
                 android:layout_width="368dp"
                 android:layout_height="30dp"
-                app:layout_constraintTop_toBottomOf="@+id/testing"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginLeft="8dp"
-                app:layout_constraintLeft_toLeftOf="parent" />
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="280dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="8dp"
-                android:max="100"
-                android:progress="0"
-                android:progressTint="@color/colorPrimary"
-                android:scaleY="3"
-                app:layout_constraintHorizontal_bias="0.454"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                tools:targetApi="24" />
+                app:layout_constraintTop_toBottomOf="@+id/testing" />
 
             <Switch
                 android:id="@+id/switchProfile"
@@ -214,20 +387,6 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/fotoPerfilPriv" />
-
-            <Switch
-                android:id="@+id/switchName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/nombrePriv"
-                app:layout_constraintHorizontal_bias="0.95"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/nombrePriv" />
 
             <Switch
                 android:id="@+id/switchAge"
@@ -258,6 +417,34 @@
                 app:layout_constraintTop_toTopOf="@+id/modeloPriv" />
 
             <Switch
+                android:id="@+id/switchRol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/rolPriv"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rolPriv" />
+
+            <Switch
+                android:id="@+id/switchColorCar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/colorCarPriv"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/colorCarPriv" />
+
+            <Switch
                 android:id="@+id/switchIdcar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -272,6 +459,20 @@
                 app:layout_constraintTop_toTopOf="@+id/placaPriv" />
 
             <Switch
+                android:id="@+id/switchCapacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/capacityPriv"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/capacityPriv" />
+
+            <Switch
                 android:id="@+id/switchCar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -284,6 +485,164 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/fotoAutoPriv" />
+
+            <Switch
+                android:id="@+id/switchSecure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/fotoSegPriv"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fotoSegPriv" />
+
+            <Switch
+                android:id="@+id/switchPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/startPointPriv"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/startPointPriv"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Switch
+                android:id="@+id/switchCupos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/availableCuposPriv"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/availableCuposPriv" />
+
+            <Switch
+                android:id="@+id/switchTimeStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/timeStartPriv"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/timeStartPriv" />
+
+            <Switch
+                android:id="@+id/switchTimeEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/timeEndPriv"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/timeEndPriv" />
+
+            <Switch
+                android:id="@+id/switchDeviation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/deviationPriv"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/deviationPriv" />
+
+            <Switch
+                android:id="@+id/switchFails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/failsPriv"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/failsPriv" />
+
+            <CheckedTextView
+                android:id="@+id/failsPriv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                android:checkMark="@android:drawable/presence_offline"
+                android:text="Fallos periodicos"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/addInfoPriv"
+                app:layout_constraintRight_toRightOf="@+id/addInfoPriv"
+                app:layout_constraintTop_toBottomOf="@+id/deviationPriv" />
+
+            <CheckedTextView
+                android:id="@+id/deviationPriv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                android:checkMark="@android:drawable/presence_offline"
+                android:checked="false"
+                android:text="Desvios"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/addInfoPriv"
+                app:layout_constraintRight_toRightOf="@+id/addInfoPriv"
+                app:layout_constraintTop_toBottomOf="@+id/addInfoPriv" />
+
+            <TextView
+                android:id="@+id/addInfoPriv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="24dp"
+                android:text="Informacion adicional:"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/timeEndPriv"
+                app:layout_constraintRight_toRightOf="@+id/timeEndPriv"
+                app:layout_constraintTop_toBottomOf="@+id/timeEndPriv" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Privado"
+                android:textAlignment="center"
+                android:textSize="12dp"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="0dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="24dp" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

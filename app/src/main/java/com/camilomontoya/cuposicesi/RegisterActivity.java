@@ -16,18 +16,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ResourceBundle;
+
 public class RegisterActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     TextView titleToolbar;
 
-    Typeface typeTitle, typeSubtitle, type;
-
     EditText name, age, model, idcar, colorCar, capacity, startPoint, availableCupos, timeStart, timeEnd;
     CheckBox fails,deviation;
     ImageButton photoProfile, photoCar;
 
-    TextView desCar,desPhotoCar,desSecure,desCupo,aditionalInfo;
+    TextView desCar,desCupo,aditionalInfo;
 
     Button register;
 
@@ -59,17 +59,13 @@ public class RegisterActivity extends AppCompatActivity {
         photoProfile = (ImageButton) findViewById(R.id.fotoPerfil);
         photoCar = (ImageButton) findViewById(R.id.fotoAuto);
 
+        desCar = (TextView) findViewById(R.id.carDescription);
+        desCupo = (TextView) findViewById(R.id.cuposDes);
+        aditionalInfo = (TextView) findViewById(R.id.disposicion);
+
         register = (Button) findViewById(R.id.register);
 
         spinner = (Spinner) findViewById(R.id.rol);
-
-        typeTitle = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Bold.ttf");
-        typeSubtitle = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
-        type = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
-
-        ControlTipografia.getInstance().setTypeTitle(typeTitle);
-        ControlTipografia.getInstance().setTypeSubtitle(typeSubtitle);
-        ControlTipografia.getInstance().setTypeMsg(type);
 
         toolbar.setElevation(12);
 
@@ -82,11 +78,37 @@ public class RegisterActivity extends AppCompatActivity {
         model.setTypeface(ControlTipografia.getInstance().getTypeMsg());
         idcar.setTypeface(ControlTipografia.getInstance().getTypeMsg());
         register.setTypeface(ControlTipografia.getInstance().getTypeMsg());
+        colorCar.setTypeface(ControlTipografia.getInstance().getTypeMsg());
+        capacity.setTypeface(ControlTipografia.getInstance().getTypeMsg());
+        startPoint.setTypeface(ControlTipografia.getInstance().getTypeMsg());
+        availableCupos.setTypeface(ControlTipografia.getInstance().getTypeMsg());
+        timeStart.setTypeface(ControlTipografia.getInstance().getTypeMsg());
+        timeEnd.setTypeface(ControlTipografia.getInstance().getTypeMsg());
+
+        fails.setTypeface(ControlTipografia.getInstance().getTypeMsg());
+        deviation.setTypeface(ControlTipografia.getInstance().getTypeMsg());
+
+        desCar.setTypeface(ControlTipografia.getInstance().getTypeTitle());
+        desCupo.setTypeface(ControlTipografia.getInstance().getTypeTitle());
+        aditionalInfo.setTypeface(ControlTipografia.getInstance().getTypeTitle());
+
+        desCar.setTextSize(18);
+        desCupo.setTextSize(18);
+        aditionalInfo.setTextSize(18);
 
         name.setElevation(6);
         age.setElevation(6);
         model.setElevation(6);
         idcar.setElevation(6);
+        colorCar.setElevation(6);
+        capacity.setElevation(6);
+        startPoint.setElevation(6);
+        availableCupos.setElevation(6);
+        timeStart.setElevation(6);
+        timeEnd.setElevation(6);
+
+        fails.setElevation(6);
+        deviation.setElevation(6);
 
         photoProfile.setElevation(6);
         photoCar.setElevation(6);
@@ -139,14 +161,25 @@ public class RegisterActivity extends AppCompatActivity {
                         Intent i = new Intent(RegisterActivity.this, PrivateActivity.class);
                         i.putExtra("NAME", name.getText().toString());
                         i.putExtra("AGE", age.getText().toString());
+                        i.putExtra("EXPERIENCE", model.getText().toString());
                         i.putExtra("ROL", spinner.getSelectedItem().toString());
                         i.putExtra("IDCAR", idcar.getText().toString());
+                        i.putExtra("COLORCAR", colorCar.getText().toString());
+                        i.putExtra("CAPACITY", capacity.getText().toString());
+                        i.putExtra("STARTPOINT", startPoint.getText().toString());
+                        i.putExtra("AVCUPOS", availableCupos.getText().toString());
+                        i.putExtra("TIMESTART", timeStart.getText().toString());
+                        i.putExtra("TIMEEND", timeEnd.getText().toString());
+                        i.putExtra("DEVIATION", deviation.isChecked());
+                        i.putExtra("FAILS", fails.isChecked());
                         startActivity(i);
                         finish();
                     }
                 } else {
                     aviso("Completa todos los campos");
                 }
+                /*startActivity(new Intent(RegisterActivity.this, PrivateActivity.class));
+                finish();*/
             }
         });
     }

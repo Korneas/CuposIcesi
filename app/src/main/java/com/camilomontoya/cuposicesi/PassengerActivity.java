@@ -34,9 +34,16 @@ public class PassengerActivity extends AppCompatActivity {
 
         List items = new ArrayList();
 
-        for(int i = 0; i < 10;i++){
-            items.add(new CupoCard(R.color.colorPrimary));
-        }
+        items.add(new CupoCard(R.drawable.card_cupo_0));
+        items.add(new CupoCard(R.drawable.card_cupo_1));
+        items.add(new CupoCard(R.drawable.card_cupo_2));
+        items.add(new CupoCard(R.drawable.card_cupo_3));
+        items.add(new CupoCard(R.drawable.card_cupo_4));
+        items.add(new CupoCard(R.drawable.card_cupo_5));
+        items.add(new CupoCard(R.drawable.card_cupo_6));
+        items.add(new CupoCard(R.drawable.card_cupo_7));
+        items.add(new CupoCard(R.drawable.card_cupo_8));
+        items.add(new CupoCard(R.drawable.card_cupo_9));
 
         recycler = (RecyclerView) findViewById(R.id.cupos);
         recycler.setHasFixedSize(true);
@@ -46,5 +53,7 @@ public class PassengerActivity extends AppCompatActivity {
 
         adapter = new CupoAdapter(items);
         recycler.setAdapter(adapter);
+
+        
     }
 }
