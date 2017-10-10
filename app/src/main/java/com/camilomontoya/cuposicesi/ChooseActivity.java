@@ -13,7 +13,7 @@ import android.widget.ToggleButton;
 public class ChooseActivity extends AppCompatActivity {
 
     ToggleButton pasajero,conductor;
-    Button continuar;
+    Button continuar,facebook;
 
     TextView subtitle,subConductor, subPasajero;
 
@@ -28,6 +28,7 @@ public class ChooseActivity extends AppCompatActivity {
         conductor = (ToggleButton) findViewById(R.id.conductor);
 
         continuar = (Button) findViewById(R.id.continuar);
+        facebook = (Button) findViewById(R.id.facebookBtn);
 
         subConductor = (TextView) findViewById(R.id.subConductor);
         subPasajero = (TextView) findViewById(R.id.subPasajero);
@@ -45,6 +46,7 @@ public class ChooseActivity extends AppCompatActivity {
         subPasajero.setTypeface(ControlTipografia.getInstance().getTypeMsg());
         subtitle.setTypeface(ControlTipografia.getInstance().getTypeMsg());
         continuar.setTypeface(ControlTipografia.getInstance().getTypeMsg());
+        facebook.setTypeface(ControlTipografia.getInstance().getTypeMsg());
 
         pasajero.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +80,13 @@ public class ChooseActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Elige una de las spinner", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChooseActivity.this,FacebookActivity.class));
             }
         });
     }

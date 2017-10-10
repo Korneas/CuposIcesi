@@ -1,9 +1,9 @@
 package com.camilomontoya.cuposicesi;
 
-import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -38,6 +38,15 @@ public class PassengerActivity extends AppCompatActivity {
         titleToolbar.setTypeface(ControlTipografia.getInstance().getTypeTitle());
         titleToolbar.setTextSize(20);
         titleToolbar.setTextColor(getResources().getColor(R.color.colorPrimary));
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(PassengerActivity.this,ResultActivity.class);
+                intent.putExtra("MESSAGE","Te demoraste mucho deciendo\nLos cupos se acabaron :(");
+                startActivity(intent);
+            }
+        },120000);
 
         List items = new ArrayList();
 
@@ -128,5 +137,9 @@ public class PassengerActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         }
+    }
+
+    private void aviso(String text) {
+        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
     }
 }
