@@ -12,8 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/CuposTheme">
-        <activity
-            android:name=".ChooseActivity">
+        <activity android:name=".ChooseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,8 +20,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".PrivateActivity" />
-        <activity android:name=".RegisterActivity" android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".PassengerActivity"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".PassengerActivity" />
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".FacebookActivity"></activity>
     </application>
 
 </manifest>
